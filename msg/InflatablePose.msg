@@ -1,0 +1,11 @@
+geometry_msgs/Point32 base
+geometry_msgs/Point32[] current
+geometry_msgs/Point32[] target
+float32[] current_q
+float32[] target_q
+float32 hand_q
+float32 init_q
+float32 current_yaw
+float32 target_yaw
+bool current_reach_flag
+bool target_reach_flag

@@ -1,0 +1,1 @@
+int16 inflatable_state_flag
