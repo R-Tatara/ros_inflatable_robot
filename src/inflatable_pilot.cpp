@@ -2,7 +2,7 @@
 
 Name : inflatable_vicon.cpp
 
-Abstract : Sequential control pilot for Inflatable Robot
+Abstract : Sequential control pilot for an inflatable robot
 
 Author : Ryosuke Tatara
 

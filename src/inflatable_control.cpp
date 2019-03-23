@@ -2,7 +2,7 @@
 
 Name : inflatable_control.cpp
 
-Abstract : Visual feedback control for Inflatable Robot
+Abstract : Visual feedback control for an inflatable robot
 
 Author : Ryosuke Tatara
 
@@ -28,7 +28,7 @@ Author : Ryosuke Tatara
 #define MAXIMUM_SENSOR_VOLTAGE 9.5
 #define MINIMUM_SENSOR_VOLTAGE 0.5
 #define BASE_PRESSURE 30.0F
-#define LINK_PRESSURE 50.0F //Actual : 50kPa
+#define LINK_PRESSURE 50.0F
 #define HAND_PRESSURE 40.0F
 #define MAXIMUM_PRESSURE 60.0F
 #define MINIMUM_PRESSURE 0.0F
@@ -424,7 +424,6 @@ void msgCallback2(const inflatable_robot::InflatablePose::ConstPtr& sub_msg2) {
 }
 
 //Subscribe VoltageInput.msg
-//WARN : msgCallback3() operation is unconfirmed
 void msgCallback3(const inflatable_robot::VoltageInput::ConstPtr& sub_msg3) {
     for(int i = 0; i < AD_CHANNEL_NUMBER; i++) {
         io.input.voltage[i] = sub_msg3->voltage_input[i];

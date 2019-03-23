@@ -2,7 +2,7 @@
 
 Name : inflatable_vicon.cpp
 
-Abstract : Vicon pose data for Inflatable Robot
+Abstract : Publish robot pose from vicon marker data for an inflatable robot
 
 Author : Ryosuke Tatara
 

@@ -2,7 +2,7 @@
 
 Name : io_board.cpp
 
-Abstract : IO board driver for Inflatable Robot
+Abstract : IO board driver for an inflatable robot
 
 Author : Ryosuke Tatara
 

@@ -1,5 +1,5 @@
 # Inflatable_robot
-This is a software for fetch-and-give task by inflatable robot.
+This is a software for fetch-and-give task by an inflatable robot.
 
 # Version information
 Version 1.0 for ROS kinetic
