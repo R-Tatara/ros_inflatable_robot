@@ -9,4 +9,5 @@ Version 1.0 for ROS kinetic
 
 # Command
 ~/Desktop/contec/caio/config$ sudo ./contec_aio_start.sh
+
 $ roslaunch inflatable_robot inflatable_service.launch
