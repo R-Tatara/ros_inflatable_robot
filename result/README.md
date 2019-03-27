@@ -1,1 +1,0 @@
-# Result CSV log
