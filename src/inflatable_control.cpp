@@ -427,19 +427,18 @@ void msgCallback2(const inflatable_robot::InflatablePose::ConstPtr& sub_msg2) {
 void msgCallback3(const inflatable_robot::VoltageInput::ConstPtr& sub_msg3) {
     for(int i = 0; i < AD_CHANNEL_NUMBER; i++) {
         io.input.voltage[i] = sub_msg3->voltage_input[i];
+        io.input.reliability[i] = io.input.voltage[i] > MINIMUM_SENSOR_VOLTAGE && io.input.voltage[i] < MAXIMUM_SENSOR_VOLTAGE ? 0 : -1;
     }
 
     //Conversion from voltage to preassure
     ADconversion();
 
-    for (int i = 0; i < AD_CHANNEL_NUMBER; i++) {
-        io.input.reliability[i] = io.input.voltage[i] > MINIMUM_SENSOR_VOLTAGE && io.input.voltage[i] < MAXIMUM_SENSOR_VOLTAGE ? 0 : -1;
-    }
-
     //Pressure feedback control
     for (int i = 0; i < AD_CHANNEL_NUMBER; i++) {
-        if (pressure_FB_cycle > 2) {
-            if (robot_state[0] != 0) {
+        pressure.current[i] = pressure.input[i];
+
+        if (robot_state[0] != 0) {
+            if (pressure_FB_cycle > 2) {
                 diviation.pressure_integral[i] += ((pressure.target_buf[i] - pressure.current_buf[i])
                                        + (pressure.target[i] - pressure.current[i]))
                                        / (2.0F * SAMPLING_FREQUENCY);
